@@ -54,7 +54,7 @@ app.use(express.static(path.join(__dirname ,"public")));
 const store = MongoStore.create({
      mongoUrl:dburl,
    crypto:{
-    secret:"mysecretsesssion",
+    secret:process.env.SECRET,
    },
    touchAfter:24*3600,
 });
@@ -73,7 +73,7 @@ const store = MongoStore.create({
 
 const sessionOptions={
     store,
-    secret:"mysecretsesssion" ,
+    secret:process.env.SECRET ,
      resave: false, 
      saveUninitialized:true,
    cookie:{
@@ -83,10 +83,10 @@ const sessionOptions={
 };
 
 
-// app.get("/" , (req , res)=>{
-//     res.send("port")
+ app.get("/" , (req , res)=>{
+     res.redirect("/listings")
     
-// })
+ })
 
 
 app.use(session(sessionOptions));
