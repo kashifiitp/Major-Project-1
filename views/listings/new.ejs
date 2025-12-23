@@ -1,0 +1,55 @@
+<% layout("./layouts/boilerplate") %> 
+<body>
+    
+     <form  method="POST" action="/listings"  class="needs-validation   was-validated  invalid"  enctype="multipart/form-data"  >
+     
+        <div class="row">
+            <div class="col-8 offset-2">
+               
+                <br>
+                <h3>Create new Listing</h3>
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+        <input type="text" name="listings[title]"  placeholder="title"  class="form-control" required/>
+        <div class="valid-feedback">
+      Looks good!
+    </div>
+        </div>
+        <div class="mb-3">   
+        <label for="description" class="form-label"></label>
+        <textarea name="listings[description]"  placeholder="" class="form-control" required > </textarea>
+       </div>
+        
+           <div class="mb-3">
+        <label for="image" class="form-label">Upload Image </label>    
+        <input type="file" name="listings[image]"   class="form-control" >
+         </div>
+         <div class="row  ">
+             <div class="mb-3 col-md-4" >
+            <label for="price" class="form-label">Price</label>
+            <input type="text" name="listings[price]"  placeholder="1200" class="form-control" required/> 
+         </div>
+           <div class="mb-3 col-md-8" >
+            <label for="country" class="form-label">Country</label>
+                    <input type="text" name="listings[country]"   placeholder="India"  class="form-control" required/>
+         </div>
+         </div>
+
+
+         <div class="mb-3">
+             <label for="location" class="form-label">Location</label>
+             <input type="text" name="listings[location]"  placeholder="Jaipur , Rajsthan"  class="form-control" required/>
+         </div>
+
+        
+        <div class="mb-3"><button class="btn btn-dark  new_btn"  >Add</button></div>
+    <br>
+    
+     </form>
+     <br>
+     <br><br><br><br><br><br><br>
+     </div>
+    </div>
+    <script src="../js/script.js"></script>
+</body>
+

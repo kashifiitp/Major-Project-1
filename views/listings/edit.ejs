@@ -1,0 +1,45 @@
+<% layout("./layouts/boilerplate") %>
+<body>
+    <form  method="POST" action="/listings/<%= Listing._id %>?_method=PUT" class="needs-validation   was-validated  invalid" enctype="multipart/form-data" >
+        <br>
+    <div class="row">
+        <div class="col-8 offset-2">
+        <h3>Edit you Listings</h3>
+   <div class="mb-3">
+            <input type="text" name="listings[title]"  value="<%= Listing.title %>" class="form-control" required>
+   </div>
+        <div class="mb-3">
+             <textarea name="listings[description]"  value="<%= Listing.description %>" class="form-control" required>description </textarea>
+        </div>
+           
+        <div class="mb-3">
+        <p>Original listing Image</p>
+      <img src="<%=  originalImageUrl %>" height="200" width="250"  >
+    </div>
+
+
+
+       <div class="mb-3">
+        <label for="image" class="form-label">Upload new Image </label>
+        <input type="file" name="listings[image]"  value="<%= Listing.image %>" class="form-control" >
+    </div>
+    <div class="row">
+         <div class="mb-3 col-md-4">       
+             <input type="text" name="listings[price]"  value="<%= Listing.price.toLocaleString("en-IN") %>"class="form-control" required>
+        </div>
+         <div class="mb-3 col-md-8">
+            <input type="text" name="listings[country]" value="<%= Listing.country %>" class="form-control" required>
+        </div>
+    </div>
+       
+     <div class="mb-3">
+        <input type="text" name="listings[location]"  value="<%= Listing.location %>" class="form-control" required>
+     </div>
+       <div class="mb-3"> <button class="btn btn-dark new_btn" >Edit</button>
+        </div>
+       <br>
+     </form>
+     </div>
+     </div>
+     <script src="/js/script.js"></script>
+</body>
